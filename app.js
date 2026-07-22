@@ -6,25 +6,34 @@ fetch("drugs.json")
 
     drugs = data;
 
-alert("JSON Loaded: " + drugs.length);
+    loadDrugsByType();
 
-loadDrugsByType();
+    document
+    .getElementById("drugType")
+    .addEventListener(
+        "change",
+        loadDrugsByType
+    );
 
-console.log(drugs);
+    document
+    .getElementById("drugSelect")
+    .addEventListener(
+        "change",
+        updateConcentrations
+    );
 
-  function loadDrugsByType(){
+})
+.catch(error => {
+    console.error(error);
 
-    const drugTypeElement =
-        document.getElementById("drugType");
+    document.getElementById("result").innerHTML =
+        "خطأ في تحميل قائمة الأدوية";
+});
 
-    if(!drugTypeElement){
-        alert("drugType not found");
-        return;
-    }
+function loadDrugsByType(){
 
-    const type = drugTypeElement.value;
-
-    alert("Selected Type = " + type);
+    const type =
+        document.getElementById("drugType").value;
 
     const select =
         document.getElementById("drugSelect");
@@ -32,41 +41,20 @@ console.log(drugs);
     select.innerHTML =
         '<option value="">اختر الدواء</option>';
 
-    const filtered =
+    const filteredDrugs =
         drugs.filter(
             drug => drug.type === type
         );
 
-    alert("Found drugs = " + filtered.length);
-
-    filtered.forEach(drug => {
+    filteredDrugs.forEach(drug => {
 
         const option =
             document.createElement("option");
 
         option.value = drug.id;
-        option.textContent = drug.generic_name;
-
-        select.appendChild(option);
-    });
-}
-    select.innerHTML =
-        '<option value="">اختر الدواء</option>';
-
-    drugs
-    .filter(
-        drug => drug.type === type
-    )
-    .forEach(drug => {
-
-        const option =
-            document.createElement("option");
-
-        option.value =
-            drug.id;
 
         option.textContent =
-            drug.generic_name;
+            `${drug.generic_name} - ${drug.arabic_name}`;
 
         select.appendChild(option);
 
@@ -75,8 +63,7 @@ console.log(drugs);
     document.getElementById(
         "concentrationSelect"
     ).innerHTML =
-    '<option>اختر التركيز</option>';
-
+    '<option value="">اختر التركيز</option>';
 }
 
 function updateConcentrations(){
@@ -182,6 +169,23 @@ function calculateDose(){
         return;
     }
 
+    const mgPerMl =
+        parseFloat(
+            document.getElementById(
+                "concentrationSelect"
+            ).value
+        );
+
+    if(!mgPerMl){
+
+        document.getElementById(
+            "result"
+        ).innerHTML =
+        "اختر التركيز";
+
+        return;
+    }
+
     let doseMg =
         weight *
         drug.dose_mg_kg;
@@ -190,17 +194,9 @@ function calculateDose(){
         doseMg >
         drug.max_dose_mg
     ){
-
         doseMg =
             drug.max_dose_mg;
     }
-
-    const mgPerMl =
-        parseFloat(
-            document.getElementById(
-                "concentrationSelect"
-            ).value
-        );
 
     const doseMl =
         doseMg / mgPerMl;
@@ -240,24 +236,21 @@ function calculateDose(){
 <div class="result-item">
     <span class="result-label">🥄 الحجم</span>
     <span class="result-value">
-        ${doseMl.toFixed(2)}
-        mL
+        ${doseMl.toFixed(2)} mL
     </span>
 </div>
 
 <div class="result-item">
     <span class="result-label">📋 الحساب</span>
     <span class="result-value">
-        ${drug.dose_mg_kg}
-        mg/kg
+        ${drug.dose_mg_kg} mg/kg
     </span>
 </div>
 
 <div class="result-item">
     <span class="result-label">🚫 الحد الأعلى</span>
     <span class="result-value">
-        ${drug.max_dose_mg}
-        mg
+        ${drug.max_dose_mg} mg
     </span>
 </div>
 
@@ -265,5 +258,4 @@ function calculateDose(){
 ⏰ ${drug.frequency || "حسب وصف الطبيب"}
 </div>
 `;
-
 }
