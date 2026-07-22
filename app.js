@@ -6,15 +6,50 @@ fetch("drugs.json")
 
     drugs = data;
 
-    const select =
-        document.getElementById("drugSelect");
+    loadDrugsByType();
 
-    drugs.forEach(drug => {
+    document
+    .getElementById("drugType")
+    .addEventListener(
+        "change",
+        loadDrugsByType
+    );
+
+    document
+    .getElementById("drugSelect")
+    .addEventListener(
+        "change",
+        updateConcentrations
+    );
+
+});
+
+function loadDrugsByType(){
+
+    const type =
+        document.getElementById(
+            "drugType"
+        ).value;
+
+    const select =
+        document.getElementById(
+            "drugSelect"
+        );
+
+    select.innerHTML =
+        '<option value="">اختر الدواء</option>';
+
+    drugs
+    .filter(
+        drug => drug.type === type
+    )
+    .forEach(drug => {
 
         const option =
             document.createElement("option");
 
-        option.value = drug.id;
+        option.value =
+            drug.id;
 
         option.textContent =
             drug.generic_name;
@@ -22,15 +57,21 @@ fetch("drugs.json")
         select.appendChild(option);
 
     });
-document
-.getElementById("drugSelect")
-.addEventListener("change", updateConcentrations);
-});
+
+    document.getElementById(
+        "concentrationSelect"
+    ).innerHTML =
+    '<option>اختر التركيز</option>';
+
+}
+
 function updateConcentrations(){
 
     const drugId =
         parseInt(
-            document.getElementById("drugSelect").value
+            document.getElementById(
+                "drugSelect"
+            ).value
         );
 
     const drug =
@@ -63,40 +104,53 @@ function updateConcentrations(){
     });
 
 }
+
 function calculateDose(){
 
     const weight =
         parseFloat(
-            document.getElementById("weight").value
+            document.getElementById(
+                "weight"
+            ).value
         );
 
     const age =
         parseFloat(
-            document.getElementById("age").value
+            document.getElementById(
+                "age"
+            ).value
         );
 
     const ageUnit =
-        document.getElementById("ageUnit").value;
+        document.getElementById(
+            "ageUnit"
+        ).value;
 
     if(!weight){
 
-        document.getElementById("result").innerHTML =
-            "الرجاء إدخال الوزن";
+        document.getElementById(
+            "result"
+        ).innerHTML =
+        "الرجاء إدخال الوزن";
 
         return;
     }
 
     if(!age){
 
-        document.getElementById("result").innerHTML =
-            "الرجاء إدخال العمر";
+        document.getElementById(
+            "result"
+        ).innerHTML =
+        "الرجاء إدخال العمر";
 
         return;
     }
 
     const drugId =
         parseInt(
-            document.getElementById("drugSelect").value
+            document.getElementById(
+                "drugSelect"
+            ).value
         );
 
     const drug =
@@ -106,16 +160,22 @@ function calculateDose(){
 
     if(!drug){
 
-        document.getElementById("result").innerHTML =
-            "اختر دواء";
+        document.getElementById(
+            "result"
+        ).innerHTML =
+        "اختر دواء";
 
         return;
     }
 
     let doseMg =
-        weight * drug.dose_mg_kg;
+        weight *
+        drug.dose_mg_kg;
 
-    if(doseMg > drug.max_dose_mg){
+    if(
+        doseMg >
+        drug.max_dose_mg
+    ){
 
         doseMg =
             drug.max_dose_mg;
@@ -131,7 +191,9 @@ function calculateDose(){
     const doseMl =
         doseMg / mgPerMl;
 
-    document.getElementById("result").innerHTML =
+    document.getElementById(
+        "result"
+    ).innerHTML =
 `
 <div class="result-title">
 💊 ${drug.generic_name}
@@ -142,7 +204,8 @@ function calculateDose(){
 <div class="result-item">
     <span class="result-label">👶 العمر</span>
     <span class="result-value">
-        ${age} ${ageUnit === "months" ? "شهر" : "سنة"}
+        ${age}
+        ${ageUnit === "months" ? "شهر" : "سنة"}
     </span>
 </div>
 
@@ -163,21 +226,24 @@ function calculateDose(){
 <div class="result-item">
     <span class="result-label">🥄 الحجم</span>
     <span class="result-value">
-        ${doseMl.toFixed(2)} mL
+        ${doseMl.toFixed(2)}
+        mL
     </span>
 </div>
 
 <div class="result-item">
     <span class="result-label">📋 الحساب</span>
     <span class="result-value">
-        ${drug.dose_mg_kg} mg/kg
+        ${drug.dose_mg_kg}
+        mg/kg
     </span>
 </div>
 
 <div class="result-item">
     <span class="result-label">🚫 الحد الأعلى</span>
     <span class="result-value">
-        ${drug.max_dose_mg} mg
+        ${drug.max_dose_mg}
+        mg
     </span>
 </div>
 
