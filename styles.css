@@ -13,6 +13,14 @@ body{
     border-radius:16px;
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+.pharmacy-name {
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Traditional Arabic", "Cairo", serif;
+    text-shadow: 1px 1px 3px #999;
+    margin-bottom: 5px;
+}
 
 h1{
     text-align:center;
