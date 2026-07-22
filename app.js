@@ -132,7 +132,13 @@ document.getElementById(
     document.getElementById("result").innerHTML =
     `
     <b>${drug.generic_name}</b>
-    <br><br>
+
+<br><br>
+
+العمر:
+${age} ${ageUnit === "months" ? "شهر" : "سنة"}
+
+<br><br>
 
     الجرعة:
     ${doseMg.toFixed(1)} mg
