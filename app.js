@@ -154,4 +154,3 @@ ${doseMl.toFixed(2)} mL
 ${drug.frequency || "حسب وصف الطبيب"}
 
 `;
-]
