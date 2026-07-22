@@ -19,7 +19,8 @@ body{
     font-weight: bold;
     font-family: "Traditional Arabic", "Cairo", serif;
     text-shadow: 1px 1px 3px #999;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 h1{
