@@ -6,6 +6,8 @@ fetch("drugs.json")
 
     drugs = data;
 
+console.log(drugs);
+
     loadDrugsByType();
 
     document
