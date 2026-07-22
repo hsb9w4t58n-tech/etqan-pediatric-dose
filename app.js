@@ -78,16 +78,18 @@ function calculateDose(){
     const ageUnit =
         document.getElementById("ageUnit").value;
 
-    let ageYears = age;
-
-    if(ageUnit === "months"){
-        ageYears = age / 12;
-    }
-
     if(!weight){
 
         document.getElementById("result").innerHTML =
             "الرجاء إدخال الوزن";
+
+        return;
+    }
+
+    if(!age){
+
+        document.getElementById("result").innerHTML =
+            "الرجاء إدخال العمر";
 
         return;
     }
@@ -120,36 +122,68 @@ function calculateDose(){
     }
 
     const mgPerMl =
-parseFloat(
-document.getElementById(
-"concentrationSelect"
-).value
-);
+        parseFloat(
+            document.getElementById(
+                "concentrationSelect"
+            ).value
+        );
 
     const doseMl =
         doseMg / mgPerMl;
 
     document.getElementById("result").innerHTML =
 `
-<h3>${drug.generic_name}</h3>
-
-<div class="result-item">
-  <span class="result-label">👶 العمر</span>
-  <span class="result-value">${age} ${ageUnit === "months" ? "شهر" : "سنة"}</span>
+<div class="result-title">
+💊 ${drug.generic_name}
+<br>
+<small>${drug.arabic_name || ""}</small>
 </div>
 
 <div class="result-item">
-  <span class="result-label">⚖️ الوزن</span>
-  <span class="result-value">${weight} كغم</span>
+    <span class="result-label">👶 العمر</span>
+    <span class="result-value">
+        ${age} ${ageUnit === "months" ? "شهر" : "سنة"}
+    </span>
 </div>
 
 <div class="result-item">
-  <span class="result-label">💉 الجرعة</span>
-  <span class="result-value">${doseMg.toFixed(1)} mg</span>
+    <span class="result-label">⚖️ الوزن</span>
+    <span class="result-value">
+        ${weight} كغم
+    </span>
 </div>
 
 <div class="result-item">
-  <span class="result-label">🥄 الحجم</span>
-  <span class="result-value">${doseMl.toFixed(2)} mL</span>
+    <span class="result-label">💉 الجرعة</span>
+    <span class="result-value">
+        ${doseMg.toFixed(1)} mg
+    </span>
 </div>
+
+<div class="result-item">
+    <span class="result-label">🥄 الحجم</span>
+    <span class="result-value">
+        ${doseMl.toFixed(2)} mL
+    </span>
+</div>
+
+<div class="result-item">
+    <span class="result-label">📋 الحساب</span>
+    <span class="result-value">
+        ${drug.dose_mg_kg} mg/kg
+    </span>
+</div>
+
+<div class="result-item">
+    <span class="result-label">🚫 الحد الأعلى</span>
+    <span class="result-value">
+        ${drug.max_dose_mg} mg
+    </span>
+</div>
+
+<div class="result-frequency">
+⏰ ${drug.frequency || "حسب وصف الطبيب"}
+</div>
+`;
+
 }
