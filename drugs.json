@@ -1,6 +1,7 @@
 [
 {
   "id": 1,
+  "type": "oral",
   "generic_name": "Paracetamol",
   "arabic_name": "باراسيتامول",
   "dose_mg_kg": 15,
@@ -19,6 +20,7 @@
 },
 {
   "id": 2,
+  "type": "oral",
   "generic_name": "Ibuprofen",
   "arabic_name": "ايبوبروفين",
   "dose_mg_kg": 10,
@@ -33,6 +35,7 @@
 },
 {
   "id": 3,
+  "type": "oral",
   "generic_name": "Azithromycin",
   "arabic_name": "ازيثرومايسين",
   "dose_mg_kg": 10,
@@ -47,6 +50,7 @@
 },
 {
   "id": 4,
+  "type": "oral",
   "generic_name": "Amoxicillin",
   "arabic_name": "اموكسيسيلين",
   "dose_mg_kg": 25,
@@ -61,6 +65,7 @@
 },
 {
   "id": 5,
+  "type": "oral",
   "generic_name": "Co-amoxiclav",
   "arabic_name": "كواموكسيكلاف",
   "dose_mg_kg": 25,
@@ -79,6 +84,7 @@
 },
 {
   "id": 6,
+  "type": "oral",
   "generic_name": "Cefixime",
   "arabic_name": "سيفيكسيم",
   "dose_mg_kg": 8,
@@ -93,6 +99,7 @@
 },
 {
   "id": 7,
+  "type": "oral",
   "generic_name": "Cephalexin",
   "arabic_name": "سيفاليكسين",
   "dose_mg_kg": 25,
@@ -107,6 +114,7 @@
 },
 {
   "id": 8,
+  "type": "oral",
   "generic_name": "Cetirizine",
   "arabic_name": "سيتريزين",
   "dose_mg_kg": 0.25,
@@ -121,6 +129,7 @@
 },
 {
   "id": 9,
+  "type": "oral",
   "generic_name": "Prednisolone",
   "arabic_name": "بريدنيزولون",
   "dose_mg_kg": 1,
@@ -135,6 +144,7 @@
 },
 {
   "id": 10,
+  "type": "oral",
   "generic_name": "Ondansetron",
   "arabic_name": "أوندانسيترون",
   "dose_mg_kg": 0.15,
@@ -146,5 +156,185 @@
       "mg_per_ml": 0.8
     }
   ]
+},
+{
+  "id": 101,
+  "type": "injection",
+  "generic_name": "Ceftriaxone",
+  "arabic_name": "سيفترياكسون",
+  "dose_mg_kg": 50,
+  "max_dose_mg": 2000,
+  "frequency": "Once daily",
+  "concentrations": [
+    {
+      "name": "1 g vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 102,
+  "type": "injection",
+  "generic_name": "Cefotaxime",
+  "arabic_name": "سيفوتاكسيم",
+  "dose_mg_kg": 50,
+  "max_dose_mg": 2000,
+  "frequency": "Every 8 hours",
+  "concentrations": [
+    {
+      "name": "1 g vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 103,
+  "type": "injection",
+  "generic_name": "Amikacin",
+  "arabic_name": "أميكاسين",
+  "dose_mg_kg": 15,
+  "max_dose_mg": 1500,
+  "frequency": "Once daily",
+  "concentrations": [
+    {
+      "name": "250 mg/mL",
+      "mg_per_ml": 250
+    }
+  ]
+},
+{
+  "id": 104,
+  "type": "injection",
+  "generic_name": "Gentamicin",
+  "arabic_name": "جنتامايسين",
+  "dose_mg_kg": 7,
+  "max_dose_mg": 400,
+  "frequency": "Once daily",
+  "concentrations": [
+    {
+      "name": "40 mg/mL",
+      "mg_per_ml": 40
+    }
+  ]
+},
+{
+  "id": 105,
+  "type": "injection",
+  "generic_name": "Ampicillin",
+  "arabic_name": "أمبيسيلين",
+  "dose_mg_kg": 50,
+  "max_dose_mg": 2000,
+  "frequency": "Every 6 hours",
+  "concentrations": [
+    {
+      "name": "500 mg vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 106,
+  "type": "injection",
+  "generic_name": "Benzyl Penicillin",
+  "arabic_name": "بنزيل بنسلين",
+  "dose_mg_kg": 50,
+  "max_dose_mg": 2400,
+  "frequency": "Every 6 hours",
+  "concentrations": [
+    {
+      "name": "1 MIU vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 107,
+  "type": "injection",
+  "generic_name": "Meropenem",
+  "arabic_name": "ميروبينيم",
+  "dose_mg_kg": 20,
+  "max_dose_mg": 1000,
+  "frequency": "Every 8 hours",
+  "concentrations": [
+    {
+      "name": "1 g vial",
+      "mg_per_ml": 50
+    }
+  ]
+},
+{
+  "id": 108,
+  "type": "injection",
+  "generic_name": "Vancomycin",
+  "arabic_name": "فانكومايسين",
+  "dose_mg_kg": 15,
+  "max_dose_mg": 2000,
+  "frequency": "Every 6 hours",
+  "concentrations": [
+    {
+      "name": "500 mg vial",
+      "mg_per_ml": 50
+    }
+  ]
+},
+{
+  "id": 109,
+  "type": "injection",
+  "generic_name": "Metronidazole IV",
+  "arabic_name": "ميترونيدازول وريدي",
+  "dose_mg_kg": 10,
+  "max_dose_mg": 500,
+  "frequency": "Every 8 hours",
+  "concentrations": [
+    {
+      "name": "5 mg/mL",
+      "mg_per_ml": 5
+    }
+  ]
+},
+{
+  "id": 110,
+  "type": "injection",
+  "generic_name": "Piperacillin/Tazobactam",
+  "arabic_name": "بيبيراسيلين/تازوباكتام",
+  "dose_mg_kg": 100,
+  "max_dose_mg": 4500,
+  "frequency": "Every 6-8 hours",
+  "concentrations": [
+    {
+      "name": "4.5 g vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 111,
+  "type": "injection",
+  "generic_name": "Cefepime",
+  "arabic_name": "سيفيبيم",
+  "dose_mg_kg": 50,
+  "max_dose_mg": 2000,
+  "frequency": "Every 8-12 hours",
+  "concentrations": [
+    {
+      "name": "1 g vial",
+      "mg_per_ml": 100
+    }
+  ]
+},
+{
+  "id": 112,
+  "type": "injection",
+  "generic_name": "Imipenem",
+  "arabic_name": "إيميبينيم",
+  "dose_mg_kg": 25,
+  "max_dose_mg": 1000,
+  "frequency": "Every 6 hours",
+  "concentrations": [
+    {
+      "name": "500 mg vial",
+      "mg_per_ml": 50
+    }
+  ]
 }
-]
+
