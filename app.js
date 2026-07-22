@@ -14,25 +14,42 @@ console.log(drugs);
 
   function loadDrugsByType(){
 
-    alert(document.getElementById("drugType").value);
+    const drugTypeElement =
+        document.getElementById("drugType");
 
-    const type =
-        document.getElementById("drugType").value;
+    if(!drugTypeElement){
+        alert("drugType not found");
+        return;
+    }
 
-});
+    const type = drugTypeElement.value;
 
-function loadDrugsByType(){
-
-    const type =
-        document.getElementById(
-            "drugType"
-        ).value;
+    alert("Selected Type = " + type);
 
     const select =
-        document.getElementById(
-            "drugSelect"
+        document.getElementById("drugSelect");
+
+    select.innerHTML =
+        '<option value="">اختر الدواء</option>';
+
+    const filtered =
+        drugs.filter(
+            drug => drug.type === type
         );
 
+    alert("Found drugs = " + filtered.length);
+
+    filtered.forEach(drug => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = drug.id;
+        option.textContent = drug.generic_name;
+
+        select.appendChild(option);
+    });
+}
     select.innerHTML =
         '<option value="">اختر الدواء</option>';
 
