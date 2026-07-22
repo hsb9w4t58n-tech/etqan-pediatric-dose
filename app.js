@@ -131,27 +131,47 @@ document.getElementById(
 
     document.getElementById("result").innerHTML =
 `
-<b>${drug.generic_name}</b>
+<h3>${drug.generic_name}</h3>
 
-<br><br>
+<hr>
 
 العمر:
 ${age} ${ageUnit === "months" ? "شهر" : "سنة"}
 
 <br><br>
 
-الجرعة:
+الوزن:
+${weight} كغم
+
+<br><br>
+
+<b>الجرعة لكل مرة:</b>
+<br>
 ${doseMg.toFixed(1)} mg
 
 <br><br>
 
-الحجم:
+<b>الحجم:</b>
+<br>
 ${doseMl.toFixed(2)} mL
 
 <br><br>
 
-التكرار:
+<b>التكرار:</b>
+<br>
 ${drug.frequency || "حسب وصف الطبيب"}
+
+<br><br>
+
+<b>الحساب:</b>
+<br>
+${drug.dose_mg_kg} mg/kg/dose
+
+<br><br>
+
+<b>الحد الأعلى للجرعة:</b>
+<br>
+${drug.max_dose_mg} mg/dose
 
 `;
 }
