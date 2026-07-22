@@ -22,9 +22,47 @@ fetch("drugs.json")
         select.appendChild(option);
 
     });
-
+document
+.getElementById("drugSelect")
+.addEventListener("change", updateConcentrations);
 });
+function updateConcentrations(){
 
+    const drugId =
+        parseInt(
+            document.getElementById("drugSelect").value
+        );
+
+    const drug =
+        drugs.find(
+            d => d.id === drugId
+        );
+
+    const concSelect =
+        document.getElementById(
+            "concentrationSelect"
+        );
+
+    concSelect.innerHTML = "";
+
+    if(!drug) return;
+
+    drug.concentrations.forEach(conc => {
+
+        const option =
+            document.createElement("option");
+
+        option.value =
+            conc.mg_per_ml;
+
+        option.textContent =
+            conc.name;
+
+        concSelect.appendChild(option);
+
+    });
+
+}
 function calculateDose(){
 
     const weight =
@@ -68,7 +106,11 @@ function calculateDose(){
     }
 
     const mgPerMl =
-        drug.concentrations[0].mg_per_ml;
+parseFloat(
+document.getElementById(
+"concentrationSelect"
+).value
+);
 
     const doseMl =
         doseMg / mgPerMl;

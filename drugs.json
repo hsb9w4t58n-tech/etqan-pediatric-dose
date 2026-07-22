@@ -1,19 +1,21 @@
-[
-  {
-    "id": 1,
-    "generic_name": "Paracetamol",
-    "arabic_name": "باراسيتامول",
-    "dose_mg_kg": 15,
-    "max_dose_mg": 1000,
-    "concentrations": [
-      {
-        "name": "120 mg/5 mL",
-        "mg_per_ml": 24
-      }
-    ]
-  },
-  {
-    "id": 2,
+{
+  "id": 1,
+  "generic_name": "Paracetamol",
+  "arabic_name": "باراسيتامول",
+  "dose_mg_kg": 15,
+  "max_dose_mg": 1000,
+  "frequency": "Every 4-6 hours",
+  "concentrations": [
+    {
+      "name": "120 mg/5 mL",
+      "mg_per_ml": 24
+    },
+    {
+      "name": "250 mg/5 mL",
+      "mg_per_ml": 50
+    }
+  ]
+}    "id": 2,
     "generic_name": "Ibuprofen",
     "arabic_name": "ايبوبروفين",
     "dose_mg_kg": 10,
