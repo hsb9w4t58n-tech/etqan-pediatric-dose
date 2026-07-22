@@ -8,21 +8,12 @@ fetch("drugs.json")
 
 console.log(drugs);
 
-    loadDrugsByType();
+  function loadDrugsByType(){
 
-    document
-    .getElementById("drugType")
-    .addEventListener(
-        "change",
-        loadDrugsByType
-    );
+    alert(document.getElementById("drugType").value);
 
-    document
-    .getElementById("drugSelect")
-    .addEventListener(
-        "change",
-        updateConcentrations
-    );
+    const type =
+        document.getElementById("drugType").value;
 
 });
 
