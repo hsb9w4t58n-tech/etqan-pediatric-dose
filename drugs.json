@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "generic_name": "Paracetamol",
+    "arabic_name": "باراسيتامول",
+    "dose_mg_kg": 15,
+    "max_dose_mg": 1000,
+    "concentrations": [
+      {
+        "name": "120 mg/5 mL",
+        "mg_per_ml": 24
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "generic_name": "Ibuprofen",
+    "arabic_name": "ايبوبروفين",
+    "dose_mg_kg": 10,
+    "max_dose_mg": 400,
+    "concentrations": [
+      {
+        "name": "100 mg/5 mL",
+        "mg_per_ml": 20
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "generic_name": "Azithromycin",
+    "arabic_name": "ازيثرومايسين",
+    "dose_mg_kg": 10,
+    "max_dose_mg": 500,
+    "concentrations": [
+      {
+        "name": "200 mg/5 mL",
+        "mg_per_ml": 40
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "generic_name": "Amoxicillin",
+    "arabic_name": "اموكسيسيلين",
+    "dose_mg_kg": 25,
+    "max_dose_mg": 1000,
+    "concentrations": [
+      {
+        "name": "250 mg/5 mL",
+        "mg_per_ml": 50
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "generic_name": "Co-amoxiclav",
+    "arabic_name": "كواموكسيكلاف",
+    "dose_mg_kg": 25,
+    "max_dose_mg": 1000,
+    "concentrations": [
+      {
+        "name": "228 mg/5 mL",
+        "mg_per_ml": 45.6
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "generic_name": "Cefixime",
+    "arabic_name": "سيفيكسيم",
+    "dose_mg_kg": 8,
+    "max_dose_mg": 400,
+    "concentrations": [
+      {
+        "name": "100 mg/5 mL",
+        "mg_per_ml": 20
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "generic_name": "Cephalexin",
+    "arabic_name": "سيفاليكسين",
+    "dose_mg_kg": 25,
+    "max_dose_mg": 1000,
+    "concentrations": [
+      {
+        "name": "250 mg/5 mL",
+        "mg_per_ml": 50
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "generic_name": "Cetirizine",
+    "arabic_name": "سيتريزين",
+    "dose_mg_kg": 0.25,
+    "max_dose_mg": 10,
+    "concentrations": [
+      {
+        "name": "5 mg/5 mL",
+        "mg_per_ml": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "generic_name": "Prednisolone",
+    "arabic_name": "بريدنيزولون",
+    "dose_mg_kg": 1,
+    "max_dose_mg": 60,
+    "concentrations": [
+      {
+        "name": "5 mg/5 mL",
+        "mg_per_ml": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "generic_name": "Ondansetron",
+    "arabic_name": "أوندانسيترون",
+    "dose_mg_kg": 0.15,
+    "max_dose_mg": 8,
+    "concentrations": [
+      {
+        "name": "4 mg/5 mL",
+        "mg_per_ml": 0.8
+      }
+    ]
+  }
+]
