@@ -70,6 +70,20 @@ function calculateDose(){
             document.getElementById("weight").value
         );
 
+    const age =
+        parseFloat(
+            document.getElementById("age").value
+        );
+
+    const ageUnit =
+        document.getElementById("ageUnit").value;
+
+    let ageYears = age;
+
+    if(ageUnit === "months"){
+        ageYears = age / 12;
+    }
+
     if(!weight){
 
         document.getElementById("result").innerHTML =
