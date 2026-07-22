@@ -130,8 +130,8 @@ document.getElementById(
         doseMg / mgPerMl;
 
     document.getElementById("result").innerHTML =
-    `
-    <b>${drug.generic_name}</b>
+`
+<b>${drug.generic_name}</b>
 
 <br><br>
 
@@ -140,12 +140,17 @@ ${age} ${ageUnit === "months" ? "شهر" : "سنة"}
 
 <br><br>
 
-    الجرعة:
-    ${doseMg.toFixed(1)} mg
+الجرعة:
+${doseMg.toFixed(1)} mg
 
-    <br><br>
+<br><br>
 
-    الحجم:
-    ${doseMl.toFixed(2)} mL
-    `;
-}
+الحجم:
+${doseMl.toFixed(2)} mL
+
+<br><br>
+
+التكرار:
+${drug.frequency || "حسب وصف الطبيب"}
+
+`;
