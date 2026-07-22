@@ -133,45 +133,23 @@ document.getElementById(
 `
 <h3>${drug.generic_name}</h3>
 
-<hr>
+<div class="result-item">
+  <span class="result-label">👶 العمر</span>
+  <span class="result-value">${age} ${ageUnit === "months" ? "شهر" : "سنة"}</span>
+</div>
 
-العمر:
-${age} ${ageUnit === "months" ? "شهر" : "سنة"}
+<div class="result-item">
+  <span class="result-label">⚖️ الوزن</span>
+  <span class="result-value">${weight} كغم</span>
+</div>
 
-<br><br>
+<div class="result-item">
+  <span class="result-label">💉 الجرعة</span>
+  <span class="result-value">${doseMg.toFixed(1)} mg</span>
+</div>
 
-الوزن:
-${weight} كغم
-
-<br><br>
-
-<b>الجرعة لكل مرة:</b>
-<br>
-${doseMg.toFixed(1)} mg
-
-<br><br>
-
-<b>الحجم:</b>
-<br>
-${doseMl.toFixed(2)} mL
-
-<br><br>
-
-<b>التكرار:</b>
-<br>
-${drug.frequency || "حسب وصف الطبيب"}
-
-<br><br>
-
-<b>الحساب:</b>
-<br>
-${drug.dose_mg_kg} mg/kg/dose
-
-<br><br>
-
-<b>الحد الأعلى للجرعة:</b>
-<br>
-${drug.max_dose_mg} mg/dose
-
-`;
+<div class="result-item">
+  <span class="result-label">🥄 الحجم</span>
+  <span class="result-value">${doseMl.toFixed(2)} mL</span>
+</div>
 }
