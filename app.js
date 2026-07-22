@@ -6,6 +6,10 @@ fetch("drugs.json")
 
     drugs = data;
 
+alert("JSON Loaded: " + drugs.length);
+
+loadDrugsByType();
+
 console.log(drugs);
 
   function loadDrugsByType(){
