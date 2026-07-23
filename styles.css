@@ -150,3 +150,12 @@ button:hover{
     font-weight:bold;
     cursor:pointer;
 }
+.footer{
+    text-align:center;
+    margin-top:25px;
+    padding-top:15px;
+    border-top:1px solid #ddd;
+    color:#666;
+    font-size:14px;
+    line-height:1.8;
+}
