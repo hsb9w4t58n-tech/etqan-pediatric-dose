@@ -27,9 +27,7 @@ body{
 }
 
 h1{
-    text-align:center;
-    color:#0066cc;
-    margin-bottom:5px;
+    margin-top: 5px;
 }
 
 p{
@@ -165,8 +163,7 @@ button:hover{
 }
 
 .logo{
-    width:160px;
-    height:auto;
-    display:block;
-    margin:0 auto 15px;
+    width: 140px;
+    display: block;
+    margin: 20px auto 10px;
 }
