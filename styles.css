@@ -159,3 +159,13 @@ button:hover{
     font-size:14px;
     line-height:1.8;
 }
+.logo-container{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.logo-container img{
+    width:140px;
+    max-width:80%;
+    border-radius:15px;
+}
