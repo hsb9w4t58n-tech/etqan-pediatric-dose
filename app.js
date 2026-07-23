@@ -259,3 +259,20 @@ function calculateDose(){
 </div>
 `;
 }
+function copyResult(){
+
+    const result =
+        document.getElementById("result");
+
+    if(!result.innerText){
+
+        alert("لا توجد نتيجة لنسخها");
+        return;
+    }
+
+    navigator.clipboard.writeText(
+        result.innerText
+    );
+
+    alert("تم نسخ النتيجة");
+}
