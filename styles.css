@@ -165,10 +165,8 @@ button:hover{
 }
 
 .logo{
-    width: 180px;
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin: 5px auto 20px;
-
+    width:160px;
+    height:auto;
+    display:block;
+    margin:0 auto 15px;
 }
