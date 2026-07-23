@@ -6,12 +6,9 @@ body{
 }
 
 .container{
-    max-width:500px;
-    margin:auto;
-    background:white;
+    max-width:520px;
+    margin:25px auto;
     padding:25px;
-    border-radius:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 .pharmacy-name{
