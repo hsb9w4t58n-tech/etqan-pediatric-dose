@@ -1,92 +1,74 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ETQAN Pediatrics</title>
-
-<link rel="stylesheet" href="styles.css">
-
-</head>
 <body>
 
 <div class="container">
 
     <img src="logo.png" class="logo" alt="Al-Etqan Pharmacy Logo">
 
- 
+    <h1>حاسبة جرعات أدوية الأطفال</h1>
 
-    <h1>حاسبة جرع أدوية الأطفال</h1>
+    <label>نوع الدواء</label>
 
-    
-</div>
+    <select id="drugType">
+        <option value="oral">شرابات فموية</option>
+    </select>
 
+    <label>الدواء</label>
 
-<label>نوع الدواء</label>
+    <select id="drugSelect">
+        <option value="">اختر الدواء</option>
+    </select>
 
-<select id="drugType">
-    <option value="oral">شرابات فموية</option>
-    <option value="injection">حقن</option>
-</select>
+    <label>التركيز</label>
 
-<label>الدواء</label>
+    <select id="concentrationSelect">
+        <option>اختر التركيز</option>
+    </select>
 
-<select id="drugSelect">
-    <option value="">اختر الدواء</option>
-</select>
+    <label>الوزن (كغم)</label>
 
-<label>التركيز</label>
+    <input
+        type="number"
+        id="weight"
+        placeholder="الوزن (كغم)"
+    >
 
-<select id="concentrationSelect">
-    <option>اختر التركيز</option>
-</select>
+    <label>العمر</label>
 
-<label>الوزن (كغم)</label>
+    <div class="age-box">
 
-<input
-type="number"
-id="weight"
-placeholder="الوزن (كغم)"
->
+        <input
+            type="number"
+            id="age"
+            placeholder="العمر"
+        >
 
-<label>العمر</label>
+        <select id="ageUnit">
+            <option value="years">سنوات</option>
+            <option value="months">أشهر</option>
+        </select>
 
-<div class="age-box">
+    </div>
 
-<input
-type="number"
-id="age"
-placeholder="العمر"
->
+    <button onclick="calculateDose()">
+        احسب الجرعة
+    </button>
 
-<select id="ageUnit">
-<option value="years">سنوات</option>
-<option value="months">أشهر</option>
-</select>
+    <button onclick="copyResult()" id="copyBtn">
+        📋 نسخ النتيجة
+    </button>
 
-</div>
+    <div id="result"></div>
 
+    <footer class="footer">
+        © 2026 ETQAN Pediatrics Dose Calculator
+        <br>
+        All Rights Reserved
+        <br>
+        Developed by Dr. Ahmed Ali
+    </footer>
 
-<button onclick="calculateDose()">
-احسب الجرعة
-</button>
-
-<button onclick="copyResult()" id="copyBtn">
-📋 نسخ النتيجة
-</button>
-
-<div id="result"></div>
-
-<footer class="footer">
-    © 2026 ETQAN Pediatrics Dose Calculator
-    <br>
-    All Rights Reserved
-    <br>
-    Developed by Dr. Ahmed Ali
-</footer>
 </div>
 
 <script src="app.js"></script>
 
 </body>
-</html>
