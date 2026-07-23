@@ -264,7 +264,7 @@ function copyResult(){
     const result =
         document.getElementById("result");
 
-    if(!result.innerText){
+    if(!result.innerText.trim()){
 
         alert("لا توجد نتيجة لنسخها");
         return;
@@ -272,7 +272,12 @@ function copyResult(){
 
     navigator.clipboard.writeText(
         result.innerText
-    );
+    )
+    .then(() => {
+        alert("✅ تم نسخ النتيجة");
+    })
+    .catch(() => {
+        alert("❌ تعذر النسخ");
+    });
 
-    alert("تم نسخ النتيجة");
 }
