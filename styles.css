@@ -164,8 +164,9 @@ button:hover{
     margin-bottom:15px;
 }
 
-.logo-container img{
-    width:140px;
-    max-width:80%;
-    border-radius:15px;
+.logo {
+    width: 220px;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto 15px auto;
 }
