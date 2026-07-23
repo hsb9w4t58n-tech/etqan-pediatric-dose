@@ -139,10 +139,14 @@ button:hover{
     font-weight:bold;
 }
 #copyBtn{
+    width:100%;
     margin-top:10px;
     background:#28a745;
-}
-
-#copyBtn:hover{
-    opacity:0.9;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
