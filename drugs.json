@@ -79,6 +79,10 @@
     {
       "name": "312 mg/5 mL",
       "mg_per_ml": 62.5
+    },
+    {
+      "name": "457 mg/5 mL",
+      "mg_per_ml": 91.4
     }
   ]
 },
