@@ -21,7 +21,19 @@ fetch("drugs.json")
         "change",
         updateConcentrations
     );
+document
+.getElementById("age")
+.addEventListener(
+    "input",
+    estimateWeight
+);
 
+document
+.getElementById("ageUnit")
+.addEventListener(
+    "change",
+    estimateWeight
+);
 })
 .catch(error => {
     console.error(error);
@@ -279,5 +291,55 @@ function copyResult(){
     .catch(() => {
         alert("❌ تعذر النسخ");
     });
+
+}
+function estimateWeight() {
+
+    const age =
+        parseFloat(document.getElementById("age").value);
+
+    const ageUnit =
+        document.getElementById("ageUnit").value;
+
+    const weightInput =
+        document.getElementById("weight");
+
+    const note =
+        document.getElementById("estimatedWeight");
+
+    // إذا المستخدم كتب وزنه بنفسه لا نغيره
+    if (weightInput.value !== "") return;
+
+    let estimated = null;
+
+    if (ageUnit === "months") {
+
+        if (age >= 1 && age <= 12) {
+            estimated = (age / 2) + 4;
+        }
+
+    } else {
+
+        if (age >= 1 && age <= 5) {
+            estimated = (age * 2) + 8;
+        }
+        else if (age >= 6 && age <= 12) {
+            estimated = (age * 3) + 7;
+        }
+
+    }
+
+    if (estimated !== null) {
+
+        weightInput.value =
+            estimated.toFixed(1);
+
+        note.style.display = "block";
+
+    } else {
+
+        note.style.display = "none";
+
+    }
 
 }
